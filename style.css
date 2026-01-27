@@ -102,8 +102,16 @@ h4 {
     color: var(--text-primary);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent);
+}
+
+.page-content {
+    min-height: calc(100vh - 80px - 100px);
+    /* Height minus header and footer */
+    padding-top: 100px;
+    /* Space for fixed header */
 }
 
 .btn-contact {

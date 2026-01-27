@@ -4,226 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Granger - Portfolio</title>
+    <title>Paul Granger - À propos</title>
     <meta name="description"
         content="Portfolio de Paul Granger, étudiant en BUT Informatique à la recherche d'un stage. Développement, IA, Data.">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header / Navigation -->
     <header class="header">
         <nav class="navbar">
-            <a href="#" class="logo">PG.</a>
+            <a href="index.html" class="logo">PG.</a>
             <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#cv">CV & Vidéo</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact" class="btn-contact">Me contacter</a></li>
+                <li><a href="index.html" class="active">À propos</a></li>
+                <li><a href="cv.html">CV & Vidéo</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html" class="btn-contact">Me contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="about" class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <div class="profile-container">
-                <img src="assets/profile.png" alt="Paul Granger" class="profile-img">
-            </div>
-            <h1>Paul Granger</h1>
-            <h2>Étudiant en 3e année de BUT Informatique</h2>
-            <p class="hero-text">
-                Actuellement en recherche d’un <span class="highlight">stage de 12 semaines</span> à partir de Mars.
-                Passionné par le développement, l’intelligence artificielle et l’analyse de données,
-                je souhaite mettre mes compétences au service de projets ambitieux.
-            </p>
-            <div class="social-links">
-                <a href="https://github.com/pile-23" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/paul-granger-00056723a/" target="_blank" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
-            <a href="#contact" class="btn-main">Travaillons ensemble</a>
-        </div>
-
-        <div class="hero-background-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </div>
-    </section>
-
-    <!-- CV & Video Section -->
-    <section id="cv" class="section-container">
-        <h2 class="section-title" data-aos="fade-right">Mon Profil</h2>
-
-        <div class="cv-video-grid">
-            <!-- Video -->
-            <div class="video-wrapper" data-aos="fade-up">
-                <h3>Présentation Vidéo</h3>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/taxfL8WVeLc"
-                        title="CV Vidéo Paul Granger" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+    <main class="page-content">
+        <section id="about" class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="profile-container">
+                    <img src="assets/profile.png" alt="Paul Granger" class="profile-img">
                 </div>
-            </div>
-
-            <!-- CV Image -->
-            <div class="cv-wrapper" data-aos="fade-up" data-aos-delay="200">
-                <h3>Mon Curriculum Vitae</h3>
-                <div class="cv-preview">
-                    <img src="assets/cv.png" alt="CV Paul Granger" class="cv-img">
-                    <div class="cv-overlay">
-                        <a href="assets/cv.png" target="_blank" class="btn-download"><i class="fas fa-eye"></i> Voir en
-                            grand</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Projects Section -->
-    <section id="skills" class="section-container">
-        <h2 class="section-title" data-aos="fade-right">Compétences & Projets</h2>
-
-        <div class="cards-grid">
-            <!-- Card 1 -->
-            <div class="card" data-aos="fade-up">
-                <div class="card-icon"><i class="fas fa-building"></i></div>
-                <h3 class="card-title">Gestion de Parc Immobilier</h3>
-                <p class="card-desc">Développement d’une application complète pour la gestion de biens immobiliers.</p>
-                <div class="card-details">
-                    <h4>Compétences développées</h4>
-                    <p>Développement Java Swing, Architecture MVC, Modélisation de base de données.</p>
-                </div>
-                <div class="card-tools">
-                    <span>Java</span>
-                    <span>SQL/PLSQL</span>
-                    <span>Swing</span>
-                    <span>DAO</span>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-icon"><i class="fas fa-futbol"></i></div>
-                <h3 class="card-title">App Web Matchs de Foot</h3>
-                <p class="card-desc">Réalisation d’une application web dynamique pour la gestion de matchs et de scores.
+                <h1>Paul Granger</h1>
+                <h2>Étudiant en 3e année de BUT Informatique</h2>
+                <p class="hero-text">
+                    Actuellement en recherche d’un <span class="highlight">stage de 12 semaines</span> à partir de Mars.
+                    Passionné par le développement, l’intelligence artificielle et l’analyse de données,
+                    je souhaite mettre mes compétences au service de projets ambitieux.
                 </p>
-                <div class="card-details">
-                    <h4>Compétences développées</h4>
-                    <p>Gestion de l'authentification, Opérations CRUD, Interaction API REST.</p>
+                <div class="social-links">
+                    <a href="https://github.com/pile-23" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/paul-granger-00056723a/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <div class="card-tools">
-                    <span>PHP</span>
-                    <span>JavaScript</span>
-                    <span>API REST</span>
-                    <span>Web</span>
-                </div>
+                <a href="contact.html" class="btn-main">Travaillons ensemble</a>
             </div>
 
-            <!-- Card 3 -->
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
-                <h3 class="card-title">Stage Développeur No-Code</h3>
-                <p class="card-desc">Expérience professionnelle chez <strong>Fournier Grospaud Synerys</strong>.
-                    Création d'outils QSE.</p>
-                <div class="card-details">
-                    <h4>Compétences développées</h4>
-                    <p>Analyse de besoins métiers, automatisation de processus, intégration à l'environnement Microsoft.
-                    </p>
-                </div>
-                <div class="card-tools">
-                    <span>Power Apps</span>
-                    <span>Power Automate</span>
-                    <span>Dataverse</span>
-                    <span>Teams</span>
-                </div>
+            <div class="hero-background-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
             </div>
+        </section>
+    </main>
 
-            <!-- Card 4: Technical Skills Summary -->
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3 class="card-title">Compétences Techniques</h3>
-                <p class="card-desc">Vue d'ensemble de mon bagage technique et scientifique.</p>
-                <div class="card-details">
-                    <h4>Domaines</h4>
-                    <ul class="skills-list">
-                        <li>Développement Web & App</li>
-                        <li>IA & Données (TensorFlow, Pytorch)</li>
-                        <li>Bases de données (SQL)</li>
-                    </ul>
-                </div>
-                <div class="card-tools">
-                    <span>Python</span>
-                    <span>C</span>
-                    <span>Java</span>
-                    <span>SQL</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <footer class="footer">
+        <p>&copy; 2026 Paul Granger. Tous droits réservés.</p>
+    </footer>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-container">
-        <h2 class="section-title" data-aos="fade-right">Me Contacter</h2>
-
-        <div class="contact-wrapper">
-            <div class="contact-info" data-aos="fade-right">
-                <h3>Parlons de votre projet</h3>
-                <p>N'hésitez pas à me contacter pour une offre de stage ou pour échanger sur mon profil.</p>
-
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>paulfjp.granger@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Toulouse, France</span>
-                </div>
-
-                <div class="social-big">
-                    <a href="https://github.com/pile-23" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/paul-granger-00056723a/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-
-            <form class="contact-form" id="contact-form" data-aos="zoom-in">
-                <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input type="text" id="name" name="name" required placeholder="Votre nom">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Votre email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Envoyer le message <i class="fas fa-paper-plane"></i></button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 

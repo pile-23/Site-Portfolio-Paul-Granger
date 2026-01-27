@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Granger - CV & Vidéo</title>
+    <meta name="description" content="CV et présentation vidéo de Paul Granger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">PG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">À propos</a></li>
+                <li><a href="cv.html" class="active">CV & Vidéo</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html" class="btn-contact">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section id="cv" class="section-container">
+            <h2 class="section-title" data-aos="fade-right">Mon Profil</h2>
+
+            <div class="cv-video-grid">
+                <!-- Video -->
+                <div class="video-wrapper" data-aos="fade-up">
+                    <h3>Présentation Vidéo</h3>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/taxfL8WVeLc"
+                            title="CV Vidéo Paul Granger" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- CV Image -->
+                <div class="cv-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Mon Curriculum Vitae</h3>
+                    <div class="cv-preview">
+                        <img src="assets/cv.png" alt="CV Paul Granger" class="cv-img">
+                        <div class="cv-overlay">
+                            <a href="assets/cv.png" target="_blank" class="btn-download"><i class="fas fa-eye"></i> Voir
+                                en grand</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Paul Granger. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
