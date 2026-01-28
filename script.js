@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // These IDs need to be customized
             const serviceID = 'service_7pk5kag';
-            const templateID = 'template_uuz2xtl';
+            const templateID = 'template_deosqpr';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function () {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     btnSubmit.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur';
                     btnSubmit.classList.add('error');
 
-                    alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer ou utiliser directement mon adresse email.');
+                    alert('Une erreur est survenue lors de l\'envoi du message : ' + (error.text || JSON.stringify(error)) + '\n\nVeuillez vérifier vos identifiants EmailJS (Service ID, Template ID, Public Key) ou utiliser directement mon adresse email.');
 
                     setTimeout(() => {
                         btnSubmit.innerHTML = originalText;
