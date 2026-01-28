@@ -108,6 +108,17 @@ h4 {
     color: var(--accent);
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+.hamburger i {
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
 .nav-links {
     display: flex;
     gap: 30px;
@@ -803,8 +814,34 @@ h4 {
         grid-template-columns: 1fr;
     }
 
+    /* Mobile Navigation */
+    .hamburger {
+        display: block;
+        order: -1;
+        /* Move to the left */
+    }
+
+    .logo {
+        /* Center logo if desired or keep left */
+    }
+
     .nav-links {
-        display: none;
-        /* In a real app we'd add a burger menu */
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Hidden by default */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: var(--transition);
+        z-index: 1400;
+    }
+
+    .nav-links.active {
+        left: 0;
     }
 }
