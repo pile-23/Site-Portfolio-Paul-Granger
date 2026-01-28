@@ -7,9 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
         offset: 50
     });
 
+    // Parallax Background Setup
+    const parallaxBg = document.createElement('div');
+    parallaxBg.classList.add('parallax-bg');
+    document.body.prepend(parallaxBg);
+
+    window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY;
+        // Move background slower than scroll (parallax effect)
+        // usage of negative value to move it up but slower than content
+        parallaxBg.style.transform = `translateY(${-scrolled * 0.3}px)`;
+    });
+
     // EmailJS Initialization
-    // IMPORTANT: Replace with your actual User ID / Public Key from EmailJS Dashboard
-    emailjs.init("YOUR_PUBLIC_KEY"); // Placeholder
+    // Check if emailjs is defined (it might not be loaded on all pages)
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("JCop6yM0v1HvhWI7k"); // Public Key
+    }
 
     const contactForm = document.getElementById('contact-form');
 
@@ -25,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
             btnSubmit.disabled = true;
 
             // These IDs need to be customized
-            const serviceID = 'YOUR_SERVICE_ID'; // Placeholder
-            const templateID = 'YOUR_TEMPLATE_ID'; // Placeholder
+            const serviceID = 'service_7pk5kag';
+            const templateID = 'template_uuz2xtl';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function () {
@@ -70,4 +84,81 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // Modal Logic
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+        const modalImg = document.getElementById('modal-img');
+        const modalIcon = document.getElementById('modal-icon');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalDetails = document.getElementById('modal-details');
+        const modalTools = document.getElementById('modal-tools');
+        const closeModal = document.querySelector('.close-modal');
+
+        // Open Modal
+        // Open Modal (Event Delegation)
+        document.addEventListener('click', function (e) {
+            const card = e.target.closest('.card');
+            if (card && card.querySelector('.card-details')) {
+                const iconHtml = card.querySelector('.card-icon').innerHTML;
+                const title = card.querySelector('.card-title').innerText;
+                const desc = card.querySelector('.card-desc').innerText;
+                const detailsHtml = card.querySelector('.card-details').innerHTML;
+                const toolsHtml = card.querySelector('.card-tools').innerHTML;
+                const imageSrc = card.getAttribute('data-image');
+
+                // Set content
+                const modalImg = document.getElementById('modal-img');
+                const modalBody = document.querySelector('.modal-body');
+
+                if (imageSrc) {
+                    modalImg.src = imageSrc;
+                    modalImg.parentElement.style.display = 'block'; // Make sure container is clear
+                } else {
+                    modalImg.src = 'assets/default_project.png'; // Fallback
+                    modalImg.parentElement.style.display = 'block';
+                }
+
+                // Clear background image that was used previously
+                if (modalBody) modalBody.style.backgroundImage = 'none';
+
+                modalIcon.innerHTML = iconHtml;
+                modalTitle.innerText = title;
+                modalDesc.innerText = desc;
+                modalDetails.innerHTML = detailsHtml;
+                modalTools.innerHTML = toolsHtml;
+
+                modal.style.display = 'block';
+                // Trigger reflow
+                void modal.offsetWidth;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            }
+        });
+
+        // Close Modal
+        function hideModal() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        closeModal.addEventListener('click', hideModal);
+
+        // Close on click outside
+        window.addEventListener('click', function (event) {
+            if (event.target == modal) {
+                hideModal();
+            }
+        });
+
+        // Close on Escape header
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape" && modal.classList.contains('show')) {
+                hideModal();
+            }
+        });
+    }
 });

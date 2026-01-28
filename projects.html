@@ -24,6 +24,7 @@
                 <li><a href="cv.html">CV & Vidéo</a></li>
                 <li><a href="skills.html">Compétences</a></li>
                 <li><a href="projects.html" class="active">Projets</a></li>
+                <li><a href="associatif.html">Projets Associatifs</a></li>
                 <li><a href="contact.html" class="btn-contact">Me contacter</a></li>
             </ul>
         </nav>
@@ -35,7 +36,7 @@
 
             <div class="cards-grid">
                 <!-- Card 1 -->
-                <div class="card card-immo" data-aos="fade-up">
+                <div class="card card-immo" data-aos="fade-up" data-image="assets/immobilier.png">
                     <div class="card-icon"><i class="fas fa-building"></i></div>
                     <h3 class="card-title">Gestion de Parc Immobilier</h3>
                     <p class="card-desc">Développement d’une application complète pour la gestion de biens immobiliers.
@@ -56,7 +57,8 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="card card-hockey" data-aos="fade-up" data-aos-delay="100">
+                <div class="card card-hockey" data-aos="fade-up" data-aos-delay="100"
+                    data-image="assets/hockey_capture.png">
                     <div class="card-icon"><i class="fas fa-hockey-puck"></i></div>
                     <h3 class="card-title">App Web Matchs de Hockey</h3>
                     <p class="card-desc">Réalisation d’une application web dynamique pour la gestion de matchs et de
@@ -77,7 +79,8 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="card card-nocode" data-aos="fade-up" data-aos-delay="200">
+                <div class="card card-nocode" data-aos="fade-up" data-aos-delay="200"
+                    data-image="assets/capture_fournier.png">
                     <div class="card-icon"><i class="fas fa-briefcase"></i></div>
                     <h3 class="card-title">Stage Développeur No-Code</h3>
                     <p class="card-desc">Expérience professionnelle chez <strong>Fournier Grospaud Synerys</strong>.
@@ -99,7 +102,7 @@
                 </div>
 
                 <!-- Card 4: OpenFoodFacts -->
-                <div class="card card-food" data-aos="fade-up" data-aos-delay="300">
+                <div class="card card-food" data-aos="fade-up" data-aos-delay="300" data-image="assets/openfood.png">
                     <div class="card-icon"><i class="fas fa-utensils"></i></div>
                     <h3 class="card-title">Analyse OpenFoodFacts</h3>
                     <p class="card-desc">Exploitation de données nutritionnelles publiques.</p>
@@ -117,12 +120,73 @@
                         <span>Word</span>
                     </div>
                 </div>
+                <!-- Card 5: StackOverflow Analysis -->
+                <div class="card card-stackoverflow" data-aos="fade-up" data-aos-delay="400"
+                    data-image="assets/stackoverflow.png">
+                    <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="card-title">Analyse StackOverflow</h3>
+                    <p class="card-desc">Application web d'analyse des sondages développeurs.</p>
+                    <div class="card-details">
+                        <h4>Réalisation</h4>
+                        <p>Visualisation interactive des données du sondage StackOverflow (Flask/ChartJS).</p>
+                        <br>
+                        <h4>Compétences développées</h4>
+                        <p>Data visualization, Backend Python, Intégration frontend.</p>
+                    </div>
+                    <div class="card-tools">
+                        <span>Flask</span>
+                        <span>ChartJS</span>
+                        <span>Python</span>
+                        <span>Web</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: LookUP (S5C01) -->
+                <div class="card card-lookup" data-aos="fade-up" data-aos-delay="500"
+                    data-image="assets/capture_lookup.png">
+                    <div class="card-icon"><i class="fas fa-tv"></i></div>
+                    <h3 class="card-title">LookUP</h3>
+                    <p class="card-desc">Moteur de recommandations de séries à partir de sous-titres.</p>
+                    <div class="card-details">
+                        <h4>Réalisation</h4>
+                        <p>Application Flask MVC. Moteur de recherche via analyse NLP (TF-IDF) et
+                            recommandations personnalisées.</p>
+                        <br>
+                        <h4>Compétences développées</h4>
+                        <p>Architecture MVC, Machine Learning (Scikit-learn), API REST, SQLAlchemy.</p>
+                    </div>
+                    <div class="card-tools">
+                        <span>Flask</span>
+                        <span>Scikit-learn</span>
+                        <span>Python</span>
+                        <span>SQLAlchemy</span>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-col">
+                    <img id="modal-img" src="" alt="Project Image">
+                </div>
+                <div class="modal-info-col">
+                    <div id="modal-icon" class="modal-icon"></div>
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-desc"></p>
+                    <div id="modal-details"></div>
+                    <div id="modal-tools" class="card-tools"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
-        <p>&copy; 2026 Paul Granger. Tous droits réservés.</p>
+
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

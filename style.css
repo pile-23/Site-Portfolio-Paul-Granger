@@ -19,10 +19,26 @@
 body {
     font-family: var(--font-main);
     background-color: var(--bg-color);
+
     color: var(--text-secondary);
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    /* Taller to allow partial scrolling */
+    background-image: url('assets/fond-vert-image-floue-personne-au-centre_1108670-18524.avif');
+    background-size: cover;
+    background-position: center top;
+    z-index: -2;
+    /* Behind everything */
+    will-change: transform;
 }
 
 a {
@@ -286,6 +302,13 @@ h4 {
     gap: 20px;
 }
 
+.cards-grid-asso {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* allow smaller cards to fit 4 */
+    gap: 20px;
+}
+
 .card {
     background: var(--card-bg);
     padding: 30px;
@@ -307,7 +330,13 @@ h4 {
 .card-hockey::before,
 .card-immo::before,
 .card-nocode::before,
-.card-food::before {
+.card-food::before,
+.card-stackoverflow::before,
+.card-lookup::before,
+.card-asso-jawad::before,
+.card-asso-icare::before,
+.card-asso-standup::before,
+.card-asso-quentin::before {
     content: '';
     position: absolute;
     top: 0;
@@ -347,10 +376,46 @@ h4 {
     background-image: url('assets/openfood.png');
 }
 
+.card-stackoverflow::before {
+    background-image: url('assets/stackoverflow.png');
+}
+
+.card-lookup::before {
+    background-image: url('assets/lookup_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    opacity: 0.15;
+}
+
+.card-asso-jawad::before {
+    background-image: url('assets/associatif/image (6).png');
+}
+
+.card-asso-icare::before {
+    background-image: url('assets/associatif/insta-icare-test.png');
+    background-position: center -85px;
+    opacity: 0.5;
+}
+
+.card-asso-standup::before {
+    background-image: url('assets/associatif/image (2).png');
+}
+
+.card-asso-quentin::before {
+    background-image: url('assets/associatif/DSC02504.jpg');
+}
+
 .card-hockey *,
 .card-immo *,
 .card-nocode *,
-.card-food * {
+.card-food *,
+.card-stackoverflow *,
+.card-lookup *,
+.card-asso-jawad *,
+.card-asso-icare *,
+.card-asso-standup *,
+.card-asso-quentin * {
     position: relative;
     z-index: 1;
 }
@@ -500,6 +565,170 @@ h4 {
     padding: 20px;
     font-size: 0.8rem;
     margin-top: 50px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #112240;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    color: var(--text-primary);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 20;
+    transition: var(--transition);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    color: var(--accent);
+}
+
+.modal-body {
+    display: flex;
+    align-items: stretch;
+}
+
+/* Remove overlay */
+.modal-body::before {
+    display: none;
+}
+
+.modal-image-col {
+    display: block;
+    width: 45%;
+    overflow: hidden;
+    background-color: transparent;
+    /* Transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Show full image */
+    display: block;
+}
+
+.modal-info-col {
+    width: 55%;
+    padding: 40px;
+    background-color: #112240;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.modal-info-col h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.modal-info-col p#modal-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.modal-info-col h4 {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-details {
+    margin-bottom: 20px;
+}
+
+/* Adjust card tools in modal */
+.modal-info-col .card-tools span {
+    color: var(--accent);
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-right: 10px;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-image-col {
+        width: 100%;
+        height: 250px;
+    }
+
+    .modal-info-col {
+        width: 100%;
+        padding: 30px 20px;
+    }
 }
 
 /* Responsive */
